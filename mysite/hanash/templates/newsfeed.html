@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <title>Newsfeed</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+          .box font{
+    font-size: 1.5rem;
+    color: #22252e;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+.box p{
+    font-size: 1rem;
+    color: #777474;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 500px;
+}
+.box a{
+    width:150px;
+    height:40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #5a76fd;
+    text-transform: uppercase;
+    margin: auto;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color:#5a76fd;
+    margin:0px;
+}
+.box-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 30px;
+}
+#heart:hover{
+    background-color: #fd705a;
+    color:#fff;
+    box-shadow: 25px 30px 30px rgba(90,118,253,0.5);
+    transition: all ease 0.3s;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:300px;
+    height: 600px;
+    text-align: center;
+    box-shadow: 2px 2px 20px rgba(90,118,253,0.15);
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 20px;
+    flex-grow: 1;
+}
+  .box-body {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: 3px;
+      padding: 10px;
+  }
+        .fa {
+          font-size: 50px;
+          cursor: pointer;
+          user-select: none;
+        }
+        tr, td {
+          border-color: #96D4D4;
+          border-width: 30px;
+        }
+        body {
+          background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgICAcHCAgHBwcHBw0HBwcHBw8ICQcNFREWFhUREx8YHSggGCYlJxMVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDQ0NDg0NDysZFRktKy03NzcrKy0tLSsrLTcrKysrLS0rLSstKysrKysrKysrLSsrKysrKysrKysrKysrK//AABEIALEBHAMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAABAAIDB//EABgQAQEBAQEAAAAAAAAAAAAAAAARARJR/8QAGAEBAQEBAQAAAAAAAAAAAAAAAAECBAP/xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQH/2gAMAwEAAhEDEQA/APIMwou6PcRRpEWMwxqKLCMwxqIgIo1DFgzFG4oRWYo3FFgzFG4oQYijcMIOcUdIoQc4o3FCDnFG4oQc4o3FEg5xRuCERiCOgiQYgjcRCMRRqJIRiBvQRDhGNNYqSKxUiSAMRWCRKxQYVCAhJiwZJMIrMUaigMxRqKEGYmoAZUagIjMEaiSDIaBBmBpakRkNBIMoogzrLWhnUONDGsbzFSKWKijiwSJFEJSwWGIkVRHMKwEUMJARQwxYMxRqCEGYmlEgyGoIQZg3G4IkGFGtwERjU0EGYGgIyikgxrLess7iHGsGN43mKliKxUYisVYUcWCKzCRVhiMWCRhixYIYYoQCaiIMppQgzBGoiDIagIMwNCJEZDWiJBnQ0CIyGhqQZRSRGNZb1jU3EaxrBjWNZjSKLUVYVhxYIokVZhxFRYcxY0RQVhWChRiwghKIARpEVkRqIiMBsakGdGtAgyy2EiMBrRqQZ0NaCIyNaGpBnWHTWNZ3EON4zjeN5iootRVhxHCKsKwrBFFYJoEinCDiwRRIqUKWAiaAMqEakBoa0ERkNBIM6y2zpBnRrWjUiMhrQkGRrQ0iM6xres6zuIcbxnG8bzGkUVio4MKwJBIEgrFJWHCCwjGliogkEUlggUQAKSDOhoaQZDQSIzoaAM6GhpEZ0NBIMjWhpEY1nW9Y1jcRrGsZxvG8xrEUWoqwokEQVik4CQJBWBIIqKQFArBJIggkgARoDQRpAaGhqRGQ0CDI1oakRlaQQZ1jW9Y1jcZaxrBjWN41hWItRUUiBIKxU0CQRBFJBURBIFBAUECSAIEAggCGkJEGgggAUkQAjSDOsN6xrGs61jeM403jWFItKsIII4CqkhASCBIQEhAUEqlBAQkiIJAEgCBAAFAAQiBEaDOsN6zrG4zpxpjNaq5q40maq1VrarNVKVssVUqtmsU1aNqsU0o3VWKaUbVYq6KN1VnpdFGqqz0uijVTHSpRqqs0dFGqmaKUaAopRoM1VKNboZqpUpTNVKVazp3WWN1FhSREkmlKSBNJAikCWFKJeFC4kkCSQJJIJJKIJAEkCCSIhqQBJAEkC1lJnUf/2Q==');
+          background-repeat: no-repeat;
+          background-attachment: fixed;  
+          background-size: cover;
+        }
+       
+        * {
+          box-sizing: border-box;
+        }
+        
+        .column {
+          float: left;
+          width: 33.33%;
+          padding: 5px;
+        }
+        
+        /* Clearfix (clear floats) */
+        .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+
+        
+        </style>
+   <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+   />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    </head>
+    <body>
+       
+            <br><br><BR>
+              
+      <div class="container-fluid">
+      <table style="border: 30px;padding: 300px;">
+            <tr>
+        {% for post in posts %}
+        
+          <td>
+          <div class="box-container">
+            
+              <div class="box-body">
+            <div class="box" >
+                <p style="float: left;" class="bg-danger text-text-primary font-weight-bold">{{post.creator.user.username}}</p>
+                <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap">
+                
+                <div class="card-body" >
+                  <h5 class="card-title text-success ">Caption</h5>
+                  <p class="card-text">{{post.caption}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">{{post.tag}}</li>
+                </ul>
+                <div class="card-body">
+                  <form action="{% url 'like_post' post.pk %}" method="post" id="my_form" >
+                    {% csrf_token %}
+                    
+                <!-- <button  type="submit",value="{{post.id}}",class="btn btn-success",name="post_id",id="like"> <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
+                   </button>  -->
+                  <button id = "heart" type="submit"> <span ><i class="fa fa-heart-o" aria-hidden="true" ></i> </span></a></button>
+                   
+                  </form>
+                  <p><h3 style="color: green;">Likes:&nbsp{{post.likes_count}}</h3></p>
+                    
+               
+                
+              </div>
+            </div>
+      
+            </div>
+            </td>
+        
+
+
+        
+          {%  endfor %}
+        </tr>
+      </table>
+        </div>
+    
+    </body>
+  
+
+  <script>
+     function submit_form(){
+     
+        var form = document.getElementById("my_form");
+        form.submit();
+
+        
+     
+    }
+
+    
+    </script>
+    
+
+</html>

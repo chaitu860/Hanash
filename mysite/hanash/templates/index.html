@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <title>Hanash</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body {
+                background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgICAcHCAgHBwcHBw0HBwcHBw8ICQcNFREWFhUREx8YHSggGCYlJxMVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDQ0NDg0NDysZFRktKy03NzcrKy0tLSsrLTcrKysrLS0rLSstKysrKysrKysrLSsrKysrKysrKysrKysrK//AABEIALEBHAMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAABAAIDB//EABgQAQEBAQEAAAAAAAAAAAAAAAARARJR/8QAGAEBAQEBAQAAAAAAAAAAAAAAAAECBAP/xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQH/2gAMAwEAAhEDEQA/APIMwou6PcRRpEWMwxqKLCMwxqIgIo1DFgzFG4oRWYo3FFgzFG4oQYijcMIOcUdIoQc4o3FCDnFG4oQc4o3FEg5xRuCERiCOgiQYgjcRCMRRqJIRiBvQRDhGNNYqSKxUiSAMRWCRKxQYVCAhJiwZJMIrMUaigMxRqKEGYmoAZUagIjMEaiSDIaBBmBpakRkNBIMoogzrLWhnUONDGsbzFSKWKijiwSJFEJSwWGIkVRHMKwEUMJARQwxYMxRqCEGYmlEgyGoIQZg3G4IkGFGtwERjU0EGYGgIyikgxrLess7iHGsGN43mKliKxUYisVYUcWCKzCRVhiMWCRhixYIYYoQCaiIMppQgzBGoiDIagIMwNCJEZDWiJBnQ0CIyGhqQZRSRGNZb1jU3EaxrBjWNZjSKLUVYVhxYIokVZhxFRYcxY0RQVhWChRiwghKIARpEVkRqIiMBsakGdGtAgyy2EiMBrRqQZ0NaCIyNaGpBnWHTWNZ3EON4zjeN5iootRVhxHCKsKwrBFFYJoEinCDiwRRIqUKWAiaAMqEakBoa0ERkNBIM6y2zpBnRrWjUiMhrQkGRrQ0iM6xres6zuIcbxnG8bzGkUVio4MKwJBIEgrFJWHCCwjGliogkEUlggUQAKSDOhoaQZDQSIzoaAM6GhpEZ0NBIMjWhpEY1nW9Y1jcRrGsZxvG8xrEUWoqwokEQVik4CQJBWBIIqKQFArBJIggkgARoDQRpAaGhqRGQ0CDI1oakRlaQQZ1jW9Y1jcZaxrBjWN41hWItRUUiBIKxU0CQRBFJBURBIFBAUECSAIEAggCGkJEGgggAUkQAjSDOsN6xrGs61jeM403jWFItKsIII4CqkhASCBIQEhAUEqlBAQkiIJAEgCBAAFAAQiBEaDOsN6zrG4zpxpjNaq5q40maq1VrarNVKVssVUqtmsU1aNqsU0o3VWKaUbVYq6KN1VnpdFGqqz0uijVTHSpRqqs0dFGqmaKUaAopRoM1VKNboZqpUpTNVKVazp3WWN1FhSREkmlKSBNJAikCWFKJeFC4kkCSQJJIJJKIJAEkCCSIhqQBJAEkC1lJnUf/2Q==');
+                background-repeat: no-repeat;
+                background-attachment: fixed;  
+                background-size: cover;
+              }
+
+              
+            #cloud {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 200px;
+            content: '';
+            opacity: 1;
+            position: relative;
+            top: 50px;
+            left: 175px;
+            color: #eee;
+            animation: float 3.5s infinite ease-in-out;
+            }
+
+            @keyframes float {
+                50% {
+                    top: 60px;
+                }    
+                100% { 
+                    top: 50px;
+                }
+            }
+
+           
+            li, a, button {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            color: black;
+            text-decoration: none;
+            }
+
+            header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 10%;
+            
+            }
+
+            .nav-links {
+            list-style: none;
+            }
+
+            .nav-links li {
+            display: inline-block;
+            padding: 0px 20px;
+            }
+
+            .nav-links li a {
+            transition: all 0.3s ease 0s;
+            
+            }
+
+            .nav-links li a:hover {
+            color: white;
+            
+            }
+
+            button {
+            padding: 9px 25px;
+            background-color: #0088a9;
+            opacity: 1;
+            border: none;
+            border-radius: 50px;
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            }
+            .ct{
+                padding: 9px 25px;
+            background-color: #3bc81e;
+            opacity: 1;
+            border: none;
+            border-radius: 50px;
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            }
+            button:hover {
+            background-color: white;
+            opacity: 0.8;
+            }
+            h1 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 62px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase; }
+
+
+            h2 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 30px; font-weight: 800; line-height: 36px; margin: 0 0 24px; text-align: center; }
+
+
+            
+        </style>
+        <script>
+        </script>
+    </head>
+    <body>
+        <header>
+            <nav>
+              <ul class="nav-links">
+                <li><a class="ct"  href="{% url 'signup' %}">Register</a></li>
+                <li><a class="ct" href="{% url 'login' %}">Login</a></li>
+                <li><a class="ct" href="{% url 'newsfeed' %}">NewsFeed</a></li>
+              </ul>
+            </nav>
+            <a class="cta" href="{% url 'room1' %}"><button>Chat Room</button>
+          </header>
+        <div class="container">
+            <div id="cloud">
+                <p class="font-weight-bold">HanasH
+                    
+                </p>
+            </div>
+            </div>
+        
+            <div>
+               <h2> Grow with your ideas!</h2>
+            </div>
+    </body>
+</html>
